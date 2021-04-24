@@ -1,0 +1,8 @@
+---
+- name: Transfer kube context
+  copy:
+    src: "{{ local_kube_dir }}/config"
+    dest: /var/lib/jenkins/.kube/
+    mode: 0600
+    owner: jenkins
+    group: jenkins

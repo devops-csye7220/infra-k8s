@@ -9,7 +9,7 @@
 
 - name: Transfer AWS config
   copy:
-    src: "{{ local_kube_dir }}"
+    src: "{{ local_aws_dir }}"
     dest: /var/lib/jenkins/
     mode: 0600
     owner: jenkins

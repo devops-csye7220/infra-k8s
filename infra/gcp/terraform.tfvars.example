@@ -1,0 +1,5 @@
+project_id = "csye7220-311817"
+credentials_file_path = "./service-account-credentials.json"
+service_account = "csye7220-access-app@csye7220-311817.iam.gserviceaccount.com"
+region = "us-east4"
+main_zone = "us-east4-b"

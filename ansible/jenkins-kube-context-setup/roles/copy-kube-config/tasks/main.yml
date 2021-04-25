@@ -1,7 +1,7 @@
 ---
-- name: Transfer kube context
+- name: Transfer GCP config
   copy:
-    src: "{{ local_kube_dir }}/config"
+    src: "{{ playbook_dir }}/service-account-credentials.json"
     dest: /var/lib/jenkins/.kube/
     mode: 0600
     owner: jenkins
@@ -14,3 +14,20 @@
     mode: 0600
     owner: jenkins
     group: jenkins
+
+- name: Transfer kube context
+  copy:
+    src: "{{ local_kube_dir }}/config"
+    dest: /var/lib/jenkins/.kube/
+    mode: 0600
+    owner: jenkins
+    group: jenkins
+
+- name: Copy the kubeconfig to jenkin
+  copy:
+    src: "{{ playbook_dir }}/gcp-kube-config.yaml"
+    dest: /var/lib/jenkins/.kube/
+    mode: 0600
+    owner: jenkins
+    group: jenkins
+

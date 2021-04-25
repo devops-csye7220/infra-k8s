@@ -5,4 +5,5 @@
 *.ipr
 
 hosts
-extra_vars-local.json
+
+*-local.json

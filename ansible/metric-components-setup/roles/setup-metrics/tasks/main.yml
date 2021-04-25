@@ -1,0 +1,34 @@
+---
+# From repository
+- name: Add Prometheus Community Helm chart repo
+  community.kubernetes.helm_repository:
+    name: prometheus-community
+    repo_url: "https://prometheus-community.github.io/helm-charts"
+
+- name: Add Grafana Community Helm chart repo
+  community.kubernetes.helm_repository:
+    name: grafana
+    repo_url: "https://grafana.github.io/helm-charts"
+
+- name: Deploy latest version of Prometheus chart inside metrics namespace
+  community.kubernetes.helm:
+    name: prometheus
+    chart_ref: prometheus-community/prometheus
+    release_namespace: metrics
+    create_namespace: yes
+  register: helm_install_prometheus
+
+- name: Install Metrics Server
+  community.kubernetes.k8s:
+    src: "{{ playbook_dir }}/roles/{{role_name}}/files/components.yaml"
+    state: present
+
+- name: Deploy latest version of Grafana chart inside metrics namespace
+  community.kubernetes.helm:
+    name: grafana
+    chart_ref: grafana/grafana
+    release_namespace: metrics
+    create_namespace: yes
+    values_files:
+      - "{{ playbook_dir }}/roles/{{role_name}}/files/grafana-values.yml"
+  register: helm_install_grafana

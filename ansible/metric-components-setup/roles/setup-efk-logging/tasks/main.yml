@@ -1,0 +1,7 @@
+---
+- name: Install EFK Chart
+  shell: "helm install efk --create-namespace --namespace logging {{ playbook_dir }}/roles/{{role_name}}/files/helm_chart_efk"
+
+
+
+

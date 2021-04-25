@@ -1,0 +1,8 @@
+---
+- name: "Setup Metric Components"
+  hosts: localhost
+  gather_facts: no
+  roles:
+    # - setup-efk-logging
+    - ingress
+    - setup-metrics

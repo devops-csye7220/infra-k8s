@@ -4,7 +4,7 @@
 # .tfstate files
 *.tfstate
 *.tfstate.*
-
+*.tfvars
 # Crash log files
 crash.log
 
@@ -32,6 +32,13 @@ override.tf.json
 
 .terraform
 
+.terraform
+.terraform.tfstate.lock.info
+
 kubeconfig_*
 
 .DS_Store
+
+
+service-account-credentials.json
+

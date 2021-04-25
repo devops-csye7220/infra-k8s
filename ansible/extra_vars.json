@@ -1,4 +1,5 @@
 {
-    "local_kube_dir": "/Users/sajalsood/.kube"
+    "local_kube_dir": "/Users/sajalsood/.kube",
+    "local_aws_dir": "/Users/sajalsood/.aws"
 }
 

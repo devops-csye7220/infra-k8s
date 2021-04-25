@@ -6,3 +6,11 @@
     mode: 0600
     owner: jenkins
     group: jenkins
+
+- name: Transfer AWS config
+  copy:
+    src: "{{ local_kube_dir }}"
+    dest: /var/lib/jenkins/
+    mode: 0600
+    owner: jenkins
+    group: jenkins

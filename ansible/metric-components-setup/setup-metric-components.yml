@@ -3,6 +3,6 @@
   hosts: localhost
   gather_facts: no
   roles:
-    # - setup-efk-logging
+    - setup-efk-logging
     - ingress
     - setup-metrics

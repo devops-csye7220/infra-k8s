@@ -17,7 +17,7 @@ resource "google_project_iam_member" "service_account-roles" {
 resource "google_container_cluster" "app_cluster" {
   provider = "google-beta"
 
-  name     = "${var.project_id}-gke"
+  name     = "gke-csye7220-devops"
   location = var.region
   min_master_version = var.k8s_version
   remove_default_node_pool = true

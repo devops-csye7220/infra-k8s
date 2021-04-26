@@ -11,7 +11,7 @@ data "aws_availability_zones" "available" {}
 
 locals {
   name_prefix = "csye7220-devops"
-  cluster_name = "csye7220-devops-eks-${random_string.suffix.result}"
+  cluster_name = "eks-csye7220-devops"
 }
 
 resource "random_string" "suffix" {

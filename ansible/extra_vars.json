@@ -1,9 +1,9 @@
 {
     "local_kube_dir": "/Users/sajalsood/.kube",
     "local_aws_dir": "/Users/sajalsood/.aws",
-    "aws_cluster_name": "csye7125-310017-gke",
+    "aws_cluster_name": "eks-csye7220-devops",
     "aws_region": "us-east-1",
-    "gke_cluster_name": "csye7125-310017-gke",
+    "aws_profile": "root",
+    "gke_cluster_name": "gke-csye7220-devops",
     "gke_region": "us-east4"
 }
-

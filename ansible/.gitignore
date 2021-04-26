@@ -7,7 +7,5 @@
 hosts
 
 *-local.json
-
 service-account-credentials.json
-
 gcp-kube-config.yaml

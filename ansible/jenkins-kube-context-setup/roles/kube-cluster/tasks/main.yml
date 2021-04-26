@@ -3,7 +3,7 @@
 - name: Get AWS Cluster Config
   shell:
     cmd: |
-      aws eks --profile {{ aws_profile }} --region {{ aws_region }} update-kubeconfig --name {{ aws_cluster_name }} --alias aws-csye7220-cluster
+      aws eks --profile {{ aws_profile }} --region {{ aws_region }} update-kubeconfig --name {{ aws_cluster_name }} --alias eks-csye7220-devops
 
 - name: Get GCP Cluster Config
   shell:
@@ -13,10 +13,10 @@
       apiVersion: v1
       kind: Config
       current-context: csye7220-gcp-gke-cluster
-      contexts: [{name: csye7220-gcp-gke-cluster, context: {cluster: gcp-csye7220-cluster, user: user-gcp}}]
+      contexts: [{name: csye7220-gcp-gke-cluster, context: {cluster: gke-csye7220-devops, user: user-gcp}}]
       users: [{name: user-gcp, user: {auth-provider: {name: gcp}}}]
       clusters:
-      - name: gcp-csye7220-cluster
+      - name: gke-csye7220-devops
         cluster:
           server: "https://$(eval "$GET_CMD --format='value(endpoint)'")"
           certificate-authority-data: "$(eval "$GET_CMD --format='value(masterAuth.clusterCaCertificate)'")"
